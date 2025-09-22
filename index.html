@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Terintegrasi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>📝 Form Registrasi Mahasiswa</h2>
+        <form id="formRegistrasi">
+            <div class="form-group">
+                <label for="namaMahasiswa">Nama Mahasiswa</label>
+                <input type="text" id="namaMahasiswa" name="namaMahasiswa" autocomplete="off" placeholder="Ketik nama, misal 'Budiman'">
+                <div id="rekomendasiNama" class="autocomplete-items"></div>
+            </div>
+            <div class="form-group">
+                <label for="nim">NIM</label>
+                <input type="text" id="nim" name="nim">
+            </div>
+            <div class="form-group">
+                <label for="mataKuliah">Mata Kuliah</label>
+                <input type="text" id="mataKuliah" name="mataKuliah">
+            </div>
+            <div class="form-group">
+                <label for="dosen">Dosen</label>
+                <input type="text" id="dosen" name="dosen">
+            </div>
+        </form>
+
+        <hr>
+
+        <h2>📮 Pencarian Kode Pos Indonesia</h2>
+        <form id="formKodePos">
+            <div class="form-group">
+                <label for="provinsi">Provinsi</label>
+                <select id="provinsi" name="provinsi">
+                    <option value="">-- Pilih Provinsi --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="kabupaten">Kabupaten/Kota</label>
+                <select id="kabupaten" name="kabupaten" disabled>
+                    <option value="">-- Pilih Kabupaten/Kota --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="kecamatan">Kecamatan</label>
+                <select id="kecamatan" name="kecamatan" disabled>
+                    <option value="">-- Pilih Kecamatan --</option>
+                </select>
+            </div>
+        </form>
+        <div id="hasilKodePos" class="hasil"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
