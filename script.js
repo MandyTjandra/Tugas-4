@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     // =================================================================
     // BAGIAN 1: LOGIKA UNTUK FORM REGISTRASI DENGAN AUTOCOMPLETE
@@ -13,15 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputNama = document.getElementById('namaMahasiswa');
     const rekomendasiBox = document.getElementById('rekomendasiNama');
 
-    inputNama.addEventListener('input', function() {
+    inputNama.addEventListener('input', function () {
         const inputText = this.value;
         closeAllLists(); // Tutup rekomendasi yang sudah ada
         if (!inputText) return false;
 
         rekomendasiBox.innerHTML = '';
-        
+
         // Filter data nama yang cocok dengan input
-        const rekomendasi = dataNamaMahasiswa.filter(nama => 
+        const rekomendasi = dataNamaMahasiswa.filter(nama =>
             nama.toLowerCase().includes(inputText.toLowerCase())
         );
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         rekomendasi.forEach(nama => {
             const item = document.createElement('div');
             item.innerHTML = `<strong>${nama.substr(0, inputText.length)}</strong>${nama.substr(inputText.length)}`;
-            item.addEventListener('click', function() {
+            item.addEventListener('click', function () {
                 inputNama.value = nama;
                 closeAllLists();
             });
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeAllLists() {
         rekomendasiBox.innerHTML = '';
     }
-    
+
     // Menutup rekomendasi jika diklik di luar area
     document.addEventListener("click", function (e) {
         if (e.target !== inputNama) {
@@ -55,65 +55,119 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Simulasi data wilayah & kode pos dari database (DATA SUDAH DITAMBAHKAN)
     const dataWilayah = {
-        "Jawa Timur": {
-            "Surabaya": {
-                "Gubeng": "60281",
-                "Tegalsari": "60262",
-                "Wonokromo": "60243"
+        "DKI Jakarta": {
+            "Jakarta Pusat": {
+                "Menteng": "10310",
+                "Gambir": "10110",
+                "Tanah Abang": "10230",
+                "Cempaka Putih": "10510"
             },
-            "Sidoarjo": {
-                "Waru": "61256",
-                "Buduran": "61252",
-                "Candi": "61271"
+            "Jakarta Selatan": {
+                "Kebayoran Baru": "12110",
+                "Tebet": "12810",
+                "Pancoran": "12780",
+                "Mampang Prapatan": "12790"
             },
-            "Malang": {
-                "Klojen": "65111",
-                "Lowokwaru": "65141",
-                "Sukun": "65147"
+            "Jakarta Barat": {
+                "Palmerah": "11480",
+                "Kebon Jeruk": "11530",
+                "Cengkareng": "11730"
+            },
+            "Jakarta Timur": {
+                "Matraman": "13110",
+                "Jatinegara": "13310",
+                "Cakung": "13910"
+            },
+            "Jakarta Utara": {
+                "Koja": "14210",
+                "Kelapa Gading": "14240",
+                "Pademangan": "14410"
             }
         },
         "Jawa Barat": {
             "Bandung": {
-                "Sukajadi": "40161",
                 "Coblong": "40132",
-                "Kiaracondong": "40281"
+                "Sukajadi": "40161",
+                "Kiaracondong": "40281",
+                "Lengkong": "40261"
             },
             "Bogor": {
                 "Bogor Tengah": "16125",
-                "Bogor Timur": "16142",
-                "Bogor Selatan": "16132"
+                "Bogor Selatan": "16132",
+                "Bogor Barat": "16113"
+            },
+            "Bekasi": {
+                "Bekasi Timur": "17111",
+                "Bekasi Barat": "17131",
+                "Bekasi Utara": "17121"
+            },
+            "Depok": {
+                "Beji": "16421",
+                "Cimanggis": "16451",
+                "Sawangan": "16511"
             }
         },
-        "DKI Jakarta": {
-            "Jakarta Selatan": {
-                "Kebayoran Baru": "12110",
-                "Tebet": "12810"
+        "Jawa Timur": {
+            "Surabaya": {
+                "Gubeng": "60281",
+                "Tegalsari": "60262",
+                "Wonokromo": "60243",
+                "Sukolilo": "60119"
             },
-            "Jakarta Pusat": {
-                "Menteng": "10310",
-                "Gambir": "10110"
-            }
-        },
-        "Banten": {
-            "Tangerang": {
-                "Cipondoh": "15148",
-                "Karawaci": "15115",
-                "Pinang": "15145"
+            "Malang": {
+                "Klojen": "65111",
+                "Lowokwaru": "65141",
+                "Sukun": "65147",
+                "Blimbing": "65126"
             },
-            "Serang": {
-                "Curug": "42171",
-                "Taktakan": "42162"
+            "Sidoarjo": {
+                "Waru": "61256",
+                "Buduran": "61252",
+                "Candi": "61271",
+                "Taman": "61257"
             }
         },
         "Sumatera Utara": {
             "Medan": {
                 "Medan Petisah": "20112",
                 "Medan Baru": "20152",
-                "Medan Tembung": "20221"
+                "Medan Tembung": "20221",
+                "Medan Denai": "20226"
             },
             "Deli Serdang": {
                 "Lubuk Pakam": "20511",
-                "Percut Sei Tuan": "20371"
+                "Percut Sei Tuan": "20371",
+                "Batang Kuis": "20562"
+            }
+        },
+        "Banten": {
+            "Tangerang": {
+                "Cipondoh": "15148",
+                "Karawaci": "15115",
+                "Pinang": "15145",
+                "Ciledug": "15151"
+            },
+            "Serang": {
+                "Curug": "42171",
+                "Taktakan": "42162",
+                "Kasemen": "42191"
+            }
+        },
+        "DI Yogyakarta": {
+            "Yogyakarta": {
+                "Danurejan": "55211",
+                "Gedong Tengen": "55271",
+                "Kotagede": "55172"
+            },
+            "Sleman": {
+                "Depok": "55281",
+                "Ngaglik": "55581",
+                "Mlati": "55284"
+            },
+            "Bantul": {
+                "Banguntapan": "55191",
+                "Kasihan": "55182",
+                "Sewon": "55188"
             }
         }
     };
@@ -130,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 2. Event listener saat Provinsi dipilih
-    selectProvinsi.addEventListener('change', function() {
+    selectProvinsi.addEventListener('change', function () {
         resetDropdown(selectKabupaten, "-- Pilih Kabupaten/Kota --");
         resetDropdown(selectKecamatan, "-- Pilih Kecamatan --");
         hasilDiv.style.display = 'none';
@@ -149,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 3. Event listener saat Kabupaten/Kota dipilih
-    selectKabupaten.addEventListener('change', function() {
+    selectKabupaten.addEventListener('change', function () {
         resetDropdown(selectKecamatan, "-- Pilih Kecamatan --");
         hasilDiv.style.display = 'none';
 
@@ -168,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 4. Event listener saat Kecamatan dipilih -> Tampilkan hasil
-    selectKecamatan.addEventListener('change', function() {
+    selectKecamatan.addEventListener('change', function () {
         const provTerpilih = selectProvinsi.value;
         const kabTerpilih = selectKabupaten.value;
         const kecTerpilih = this.value;
