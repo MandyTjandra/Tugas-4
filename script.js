@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // BAGIAN 2 & 3: LOGIKA PENCARIAN KODE POS & DROPDOWN DINAMIS
     // =================================================================
 
-    // Simulasi data wilayah & kode pos dari database
+    // Simulasi data wilayah & kode pos dari database (DATA SUDAH DITAMBAHKAN)
     const dataWilayah = {
         "Jawa Timur": {
             "Surabaya": {
@@ -65,6 +65,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 "Waru": "61256",
                 "Buduran": "61252",
                 "Candi": "61271"
+            },
+            "Malang": {
+                "Klojen": "65111",
+                "Lowokwaru": "65141",
+                "Sukun": "65147"
+            }
+        },
+        "Jawa Barat": {
+            "Bandung": {
+                "Sukajadi": "40161",
+                "Coblong": "40132",
+                "Kiaracondong": "40281"
+            },
+            "Bogor": {
+                "Bogor Tengah": "16125",
+                "Bogor Timur": "16142",
+                "Bogor Selatan": "16132"
             }
         },
         "DKI Jakarta": {
@@ -75,6 +92,28 @@ document.addEventListener('DOMContentLoaded', function() {
             "Jakarta Pusat": {
                 "Menteng": "10310",
                 "Gambir": "10110"
+            }
+        },
+        "Banten": {
+            "Tangerang": {
+                "Cipondoh": "15148",
+                "Karawaci": "15115",
+                "Pinang": "15145"
+            },
+            "Serang": {
+                "Curug": "42171",
+                "Taktakan": "42162"
+            }
+        },
+        "Sumatera Utara": {
+            "Medan": {
+                "Medan Petisah": "20112",
+                "Medan Baru": "20152",
+                "Medan Tembung": "20221"
+            },
+            "Deli Serdang": {
+                "Lubuk Pakam": "20511",
+                "Percut Sei Tuan": "20371"
             }
         }
     };
